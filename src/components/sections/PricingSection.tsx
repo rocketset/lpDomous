@@ -96,7 +96,7 @@ const PricingSection = () => {
           </h2>
           
           <p className="text-xl lg:text-2xl text-muted-foreground mb-8">
-            E para novos clientes, o <strong className="text-domous-accent-1">primeiro mês sai por apenas R$ 97</strong> use o cupom <strong>DOMOUSCRM</strong>, conta ativa em minutos.
+            E para novos clientes, o <strong className="text-domous-accent-1">primeiro mês sai por apenas R$ 97</strong> use o cupom <strong className="text-domous-accent-1">DOMOUSCRM</strong>, conta ativa em minutos.
           </p>
         </div>
 
