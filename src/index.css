@@ -1,0 +1,281 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Domous CRM Design System - Modern, Clean, Technological
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Domous Brand Colors */
+    --domous-dark: 0 0% 9%;           /* #181818 - preto profundo */
+    --domous-light: 0 0% 93%;         /* #eeeeee - cinza claro */
+    --domous-green: 194 84% 47%;      /* #10b5e2 - azul/ciano */
+    --domous-purple: 266 74% 49%;     /* #7f20d9 - roxo */
+    --domous-purple-light: 284 62% 58%; /* #b152d4 - roxo claro */
+    --domous-accent-1: 276 73% 52%;   /* #a231d7 - complementar 1 */
+    --domous-accent-2: 286 100% 34%;  /* #8a00ad - complementar 2 */
+
+    /* Gradients */
+    --gradient-domous: linear-gradient(135deg, hsl(var(--domous-green)), hsl(var(--domous-purple)), hsl(var(--domous-purple-light)));
+    --gradient-domous-reverse: linear-gradient(135deg, hsl(var(--domous-purple-light)), hsl(var(--domous-purple)), hsl(var(--domous-green)));
+    --gradient-subtle: linear-gradient(180deg, hsl(var(--domous-light)), hsl(0 0% 98%));
+    --gradient-dark: linear-gradient(135deg, hsl(var(--domous-dark)), hsl(var(--domous-accent-2)));
+
+    /* Shadows & Effects */
+    --shadow-domous: 0 20px 60px -10px hsl(var(--domous-purple) / 0.3);
+    --shadow-glow: 0 0 40px hsl(var(--domous-purple) / 0.2);
+    --shadow-card: 0 8px 32px hsl(var(--domous-dark) / 0.1);
+
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+    /* Base Theme Colors */
+    --background: 0 0% 100%;
+    --foreground: 0 0% 9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 9%;
+
+    --primary: 266 74% 49%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 0 0% 93%;
+    --secondary-foreground: 0 0% 9%;
+
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 45%;
+
+    --accent: 276 73% 52%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 266 74% 49%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 0 0% 9%;
+    --foreground: 0 0% 93%;
+
+    --card: 0 0% 12%;
+    --card-foreground: 0 0% 93%;
+
+    --popover: 0 0% 9%;
+    --popover-foreground: 0 0% 93%;
+
+    --primary: 266 74% 49%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 0 0% 15%;
+    --secondary-foreground: 0 0% 93%;
+
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 65%;
+
+    --accent: 276 73% 52%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+    --ring: 266 74% 49%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold tracking-tight;
+  }
+}
+
+@layer components {
+  /* CTA Button with Domous Gradient */
+  .btn-domous {
+    @apply bg-gradient-to-r from-[hsl(var(--domous-purple))] to-[hsl(var(--domous-accent-2))] text-white font-semibold py-4 px-8 rounded-xl transition-all duration-500 hover:shadow-lg hover:scale-105 hover:shadow-[0_20px_60px_-10px_hsl(var(--domous-purple)/0.4)] hover:bg-gradient-to-r hover:from-[hsl(var(--domous-green))] hover:via-[hsl(var(--domous-purple))] hover:to-[hsl(var(--domous-purple-light))];
+  }
+
+  /* Section Background Gradients */
+  .bg-domous-gradient {
+    background: var(--gradient-domous);
+  }
+
+  .bg-domous-subtle {
+    background: var(--gradient-subtle);
+  }
+
+  /* Text Gradients */
+  .text-domous-gradient {
+    @apply bg-gradient-to-r from-[hsl(var(--domous-green))] via-[hsl(var(--domous-purple))] to-[hsl(var(--domous-purple-light))] bg-clip-text text-transparent;
+  }
+
+  /* Cards */
+  .card-domous {
+    @apply bg-white/80 backdrop-blur-sm border border-gray-200/50 rounded-2xl p-6 transition-all duration-300 hover:shadow-[0_8px_32px_hsl(var(--domous-dark)/0.1)] hover:-translate-y-1;
+  }
+
+  /* 3D Dashboard Effect */
+  .dashboard-3d {
+    @apply transition-all duration-500 ease-out transform-gpu;
+    perspective: 1000px;
+  }
+
+  .dashboard-3d:hover {
+    transform: rotateX(5deg) rotateY(-5deg) translateZ(20px);
+  }
+
+  .dashboard-3d:hover .dashboard-layer {
+    transform: translateZ(10px);
+  }
+
+  .dashboard-layer {
+    @apply transition-transform duration-300 ease-out;
+  }
+
+  /* Animations */
+  .fade-in-up {
+    @apply animate-[fadeInUp_0.6s_ease-out_forwards];
+  }
+
+  .bounce-in {
+    @apply animate-[bounceIn_0.8s_ease-out_forwards];
+  }
+}
+
+@layer utilities {
+  /* Custom Animations */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes bounceIn {
+    0% {
+      opacity: 0;
+      transform: scale(0.3);
+    }
+    50% {
+      opacity: 1;
+      transform: scale(1.05);
+    }
+    70% {
+      transform: scale(0.9);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  @keyframes shimmer {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(100%);
+    }
+  }
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .animate-shimmer {
+    animation: shimmer 2s infinite;
+  }
+
+  /* Background Patterns */
+  .bg-grid-pattern {
+    background-image: 
+      linear-gradient(rgba(0, 0, 0, 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+
+  .bg-dot-pattern {
+    background-image: radial-gradient(circle, rgba(0, 0, 0, 0.1) 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+
+  /* Smooth Scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--muted));
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, hsl(var(--domous-green)), hsl(var(--domous-purple)));
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, hsl(var(--domous-purple)), hsl(var(--domous-purple-light)));
+  }
+}
