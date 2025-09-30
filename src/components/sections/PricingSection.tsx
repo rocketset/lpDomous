@@ -17,6 +17,7 @@ const plans = [
       "Conta ativa em minutos"
     ],
     cta: "Começar com o Essencial",
+    link: "https://pay.hotmart.com/K102155992V?off=53rfm1yf",
     icon: MessageCircle
   },
   {
@@ -35,6 +36,7 @@ const plans = [
       "Conta ativa em minutos"
     ],
     cta: "Quero o Profissional",
+    link: "https://pay.hotmart.com/K102155992V?off=lx81guor",
     bonus: "Por apenas R$ 100 a mais que o Essencial, você triplica usuários e conexões",
     icon: Crown
   },
@@ -55,6 +57,7 @@ const plans = [
       "Suporte premium"
     ],
     cta: "Quero o Avançado",
+    link: "https://pay.hotmart.com/K102155992V?off=uykcul5k",
     bonus: "Por menos que metade do custo de um atendente júnior, você tem CRM completo + assessoria",
     icon: Sparkles
   },
@@ -75,6 +78,7 @@ const plans = [
       "Gerente de conta exclusivo"
     ],
     cta: "Solicitar Proposta Enterprise",
+    link: "https://wa.me/5583981195186",
     icon: Users
   }
 ];
@@ -184,6 +188,8 @@ const PricingSection = () => {
                       ? "bg-white text-domous-purple hover:bg-white/90"
                       : "btn-domous"
                   }`}
+
+                  onClick={() => window.open(plan.link, "_blank")}
                 >
                   {plan.cta}
                   <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
