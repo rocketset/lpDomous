@@ -77,7 +77,7 @@ const plans = [
       "Treinamentos dedicados",
       "Gerente de conta exclusivo"
     ],
-    cta: "Solicitar Proposta Enterprise",
+    cta: "Solicitar Enterprise",
     link: "https://wa.me/5583981195186",
     icon: Users
   }
